@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3498db">
+    <title>Open Weather</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="weather-container">
+        <div class="weather-wrapper">
+            <h1 class="weather-title">
+                Open Weather Website
+            </h1>
+            
+            <div class="weather-search-section">
+                <div class="weather-search-box">
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        class="weather-input" 
+                        placeholder="Enter city name..."
+                        onkeypress="handleEnterKey(event)"
+                    >
+                    <button class="weather-search-btn" onclick="searchWeather()">
+                        <span class="weather-btn-text">Search</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="weather-loading" id="weatherLoading">
+                <p class="weather-loading-text">Loading weather data...</p>
+            </div>
+            
+            <div class="weather-error" id="weatherError">
+                <p class="weather-error-text" id="weatherErrorText">Error message here</p>
+            </div>
+            
+            <div class="weather-results" id="weatherResults">
+                <div class="weather-card">
+                    <div class="weather-card-header">
+                        <h2 class="weather-city-name" id="weatherCityName">City Name</h2>
+                        <p class="weather-country" id="weatherCountry">Country</p>
+                    </div>
+                    
+                    <div class="weather-main-info">
+                        <div class="weather-temp-wrapper">
+                            <span class="weather-temp" id="weatherTemp">0</span>
+                            <span class="weather-temp-unit">°C</span>
+                        </div>
+                        <p class="weather-description" id="weatherDescription">Description</p>
+                    </div>
+                    
+                    <div class="weather-details">
+                        <div class="weather-detail-item">
+                            <div class="weather-detail-content">
+                                <span class="weather-detail-label">Feels Like</span>
+                                <span class="weather-detail-value" id="weatherFeelsLike">0°C</span>
+                            </div>
+                        </div>
+                        
+                        <div class="weather-detail-item">
+                            <div class="weather-detail-content">
+                                <span class="weather-detail-label">Humidity</span>
+                                <span class="weather-detail-value" id="weatherHumidity">0%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="weather-detail-item">
+                            <div class="weather-detail-content">
+                                <span class="weather-detail-label">Wind Speed</span>
+                                <span class="weather-detail-value" id="weatherWindSpeed">0 m/s</span>
+                            </div>
+                        </div>
+                        
+                        <div class="weather-detail-item">
+                            <div class="weather-detail-content">
+                                <span class="weather-detail-label">Visibility</span>
+                                <span class="weather-detail-value" id="weatherVisibility">0 km</span>
+                            </div>
+                        </div>
+                        
+                        <div class="weather-detail-item">
+                            <div class="weather-detail-content">
+                                <span class="weather-detail-label">Min Temp</span>
+                                <span class="weather-detail-value" id="weatherMinTemp">0°C</span>
+                            </div>
+                        </div>
+                        
+                        <div class="weather-detail-item">
+                            <div class="weather-detail-content">
+                                <span class="weather-detail-label">Max Temp</span>
+                                <span class="weather-detail-value" id="weatherMaxTemp">0°C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="weather-footer">
+            <p class="weather-footer-text">
+                Powered by <a href="https://openweathermap.org/" target="_blank" class="weather-footer-link">OpenWeatherMap API</a>
+            </p>
+        </footer>
+    </div>
+    
+    <script src="configure.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
